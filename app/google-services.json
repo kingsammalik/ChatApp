@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1099133192109",
+    "firebase_url": "https://chatapp-fe124.firebaseio.com",
+    "project_id": "chatapp-fe124",
+    "storage_bucket": "chatapp-fe124.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1099133192109:android:ff9241bacb829b0b",
+        "android_client_info": {
+          "package_name": "com.samapps.sachinmalik.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1099133192109-7r2igtaghlavivir6ibrnlt2bvt5ul4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.samapps.sachinmalik.chatapp",
+            "certificate_hash": "5c804e6ff57ae84d1c3903f67b2d3d8a22fc201f"
+          }
+        },
+        {
+          "client_id": "1099133192109-hr6ubtqtknn079kukm752genhucdend3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrhlN_VBJ-1ZRhawuXpKQ1q_spfpL2lt4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1099133192109-hr6ubtqtknn079kukm752genhucdend3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
