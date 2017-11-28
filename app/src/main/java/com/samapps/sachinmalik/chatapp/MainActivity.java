@@ -1,10 +1,12 @@
 package com.samapps.sachinmalik.chatapp;
 
 import android.content.Intent;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -16,15 +18,26 @@ import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int SIGN_IN_REQUEST_CODE = 1 ;
     private FirebaseListAdapter<ChatMessage> adapter;
+    private List<String> item = null;
+
+    private List<String> path = null;
+
+    private String root="/";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getDir(Environment.getExternalStorageDirectory().toString());
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
             // Start sign in/sign up activity
             startActivityForResult(
@@ -124,4 +137,65 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    private void getDir(String dirPath)
+
+    {
+
+        //myPath.setText("Location: " + dirPath);
+
+        item = new ArrayList<String>();
+
+        path = new ArrayList<String>();
+
+
+
+        File f = new File(dirPath);
+
+        File[] files = f.listFiles();
+
+        if(!dirPath.equals(root))
+
+        {
+
+
+
+            item.add(root);
+
+            path.add(root);
+
+            item.add("../");
+
+            path.add(f.getParent());
+
+
+
+        }
+
+        for(int i=0; i < files.length; i++)
+
+        {
+
+            File file = files[i];
+
+            path.add(file.getPath());
+
+            if(file.isDirectory())
+
+                item.add(file.getName() + "/");
+
+            else
+
+                item.add(file.getName());
+
+        }
+
+
+        Log.e("chat","files recived");
+
+
+    }
+
+
+
 }
