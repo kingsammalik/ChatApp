@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bubble_layout_parent">
     <LinearLayout
         android:id="@+id/bubble_layout"
@@ -15,14 +16,16 @@
         android:visibility="gone"
         android:textStyle="normal|bold" />
 
-    <TextView
+    <com.samapps.sachinmalik.chatapp.samtextview
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:font="OpenSans-Regular.ttf"
         android:id="@+id/message_time" />
 
-    <TextView
+    <com.samapps.sachinmalik.chatapp.samtextview
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:font="OpenSans-Regular.ttf"
         android:layout_marginTop="5dp"
         android:id="@+id/message_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"

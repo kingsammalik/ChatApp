@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayChatMessages() {
 
-        ListView listOfMessages = (ListView)findViewById(R.id.list_of_messages);
+        final ListView listOfMessages = (ListView)findViewById(R.id.list_of_messages);
 
         adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
                 R.layout.message, FirebaseDatabase.getInstance().getReference()) {
@@ -120,9 +120,10 @@ public class MainActivity extends AppCompatActivity {
                 messageUser.setText(model.getMessageUser());
 
                 // Format the date before showing it
-                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
+                messageTime.setText(DateFormat.format("EEE dd MMM (HH:mm)",
                         model.getMessageTime()));
             }
+
         };
 
         listOfMessages.setAdapter(adapter);
