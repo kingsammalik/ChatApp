@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -98,7 +100,21 @@ public class MainActivity extends AppCompatActivity {
                 TextView messageText = (TextView)v.findViewById(R.id.message_text);
                 TextView messageUser = (TextView)v.findViewById(R.id.message_user);
                 TextView messageTime = (TextView)v.findViewById(R.id.message_time);
+                LinearLayout layout = (LinearLayout) v.findViewById(R.id.bubble_layout);
+                LinearLayout parent_layout = (LinearLayout) v.findViewById(R.id.bubble_layout_parent);
 
+                // if message is mine then align to right
+                if (FirebaseAuth.getInstance()
+                        .getCurrentUser()
+                        .getDisplayName().equals(model.getMessageUser())) {
+                    layout.setBackgroundResource(R.drawable.bubble2);
+                    parent_layout.setGravity(Gravity.END);
+                }
+                // If not mine then align to left
+                else {
+                    layout.setBackgroundResource(R.drawable.bubble1);
+                    parent_layout.setGravity(Gravity.START);
+                }
                 // Set their text
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());

@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@drawable/wallpaper"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.samapps.sachinmalik.chatapp.MainActivity">
@@ -11,14 +14,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:src="@drawable/ic_send_black_24dp"
+        android:src="@drawable/send"
         android:id="@+id/fab"
+        android:paddingBottom="2dp"
         android:tint="@android:color/white"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         app:fabSize="mini" />
 
-    <android.support.design.widget.TextInputLayout
+   <!-- <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/fab"
@@ -31,7 +35,30 @@
             android:hint="Input"
             android:id="@+id/input"
             />
-    </android.support.design.widget.TextInputLayout>
+    </android.support.design.widget.TextInputLayout>-->
+    <LinearLayout
+        android:id="@+id/form"
+        android:layout_below="@+id/list_of_messages"
+        android:layout_toLeftOf="@id/fab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:background="#91f1f1f1"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp" >
+
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.72"
+        android:ems="10"
+        android:maxHeight="80dp" />
+    </LinearLayout>
 
     <ListView
         android:layout_width="match_parent"
