@@ -16,11 +16,7 @@
         android:visibility="gone"
         android:textStyle="normal|bold" />
 
-    <com.samapps.sachinmalik.chatapp.samtextview
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:font="OpenSans-Regular.ttf"
-        android:id="@+id/message_time" />
+
 
     <com.samapps.sachinmalik.chatapp.samtextview
         android:layout_width="wrap_content"
@@ -30,5 +26,13 @@
         android:id="@+id/message_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp" />
+
+        <com.samapps.sachinmalik.chatapp.samtextview
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            app:font="OpenSans-Regular.ttf"
+            android:id="@+id/message_time" />
+
     </LinearLayout>
 </LinearLayout>

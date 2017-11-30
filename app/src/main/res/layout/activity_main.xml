@@ -3,16 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
-    android:focusable="true"
     android:paddingEnd="2dp"
     android:paddingStart="2dp"
-    android:focusableInTouchMode="true"
     android:background="@drawable/wallpaper"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.samapps.sachinmalik.chatapp.MainActivity">
 
-    <android.support.design.widget.FloatingActionButton
+    <ListView
+        android:id="@+id/list_of_messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:transcriptMode="alwaysScroll"
+        android:layout_above="@+id/form"
+        android:stackFromBottom="true"
+        android:layout_marginBottom="10dp"
+        android:dividerHeight="10dp"
+        android:divider="@android:color/transparent"
+        />
+    <!--<android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -24,7 +35,7 @@
         android:tint="@android:color/white"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        app:fabSize="mini" />
+        app:fabSize="mini" />-->
 
    <!-- <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -42,14 +53,12 @@
     </android.support.design.widget.TextInputLayout>-->
     <LinearLayout
         android:id="@+id/form"
-        android:layout_below="@+id/list_of_messages"
         android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:paddingEnd="2dp"
-        android:paddingStart="2dp"
+        android:paddingEnd="4dp"
+        android:paddingStart="4dp"
         android:orientation="horizontal"
         android:paddingBottom="2dp" >
 
@@ -61,26 +70,18 @@
         android:layout_weight="1"
         android:ems="10"
         android:paddingStart="3dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/border"
         android:maxHeight="80dp" />
 
         <ImageView
+            android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:scaleType="fitCenter"
             android:src="@drawable/send"/>
 
     </LinearLayout>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@id/form"
-        android:transcriptMode="alwaysScroll"
-        android:stackFromBottom="true"
-        android:dividerHeight="16dp"
-        android:divider="@android:color/transparent"
-        android:id="@+id/list_of_messages"
-        android:layout_marginBottom="16dp"/>
+
 </RelativeLayout>

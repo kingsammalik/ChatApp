@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -62,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
             displayChatMessages();
         }
 
-        FloatingActionButton fab =
-                (FloatingActionButton)findViewById(R.id.fab);
+        ImageView fab =
+                (ImageView) findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
